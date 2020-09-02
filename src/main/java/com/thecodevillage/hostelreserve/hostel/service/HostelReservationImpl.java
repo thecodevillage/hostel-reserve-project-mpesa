@@ -1,11 +1,14 @@
 package com.thecodevillage.hostelreserve.hostel.service;
 
 
+import com.google.i18n.phonenumbers.PhoneNumberUtil;
+import com.google.i18n.phonenumbers.Phonenumber;
 import com.thecodevillage.hostelreserve.hostel.models.Hostel;
 import com.thecodevillage.hostelreserve.hostel.models.Room;
 import com.thecodevillage.hostelreserve.hostel.models.RoomReserve;
 import com.thecodevillage.hostelreserve.hostel.models.Student;
 import com.thecodevillage.hostelreserve.hostel.pojo.BookingRequest;
+import com.thecodevillage.hostelreserve.hostel.pojo.DownloadRequest;
 import com.thecodevillage.hostelreserve.hostel.pojo.GenericResponse;
 import com.thecodevillage.hostelreserve.hostel.repository.*;
 import com.thecodevillage.hostelreserve.mpesa.service.MpesaService;
@@ -28,7 +31,6 @@ public class HostelReservationImpl implements HostelReservation{
     private RoomRepository roomRepository;
     private RoomReserveRepository roomReserveRepository;
     private StudentRepository studentRepository;
-
     MpesaService mpesaService;
 
 
@@ -97,15 +99,22 @@ public class HostelReservationImpl implements HostelReservation{
                 "20170824155055",
                 "CustomerPayBillOnline",
                 "1",
-                bookingRequest.getMobileNumber(),
-                bookingRequest.getMobileNumber(),
+                convertPhoneNumberToE164(bookingRequest.getMobileNumber()),
+                convertPhoneNumberToE164(bookingRequest.getMobileNumber()),
                 "174379",
                 bookingRequest.getCallbackurl(),
                 bookingRequest.getTimeouturl(),
-                room.get().getId()+"",
+                "Room "+room.get().getName()+room.get().getId()+"-"+reserve.getId(),
                 "Reservation for "+room.get().getName());
 
         return new GenericResponse(200,"Request Received, Await confirmation");
+    }
+
+    @Override
+    public GenericResponse downloadData() {
+        List<Hostel> hostels=hostelRepository.findAllHostels();
+        List<Room> rooms=roomRepository.findAllRooms();
+        return new GenericResponse(200,"",new DownloadRequest(hostels,rooms));
     }
 
 
@@ -116,5 +125,20 @@ public class HostelReservationImpl implements HostelReservation{
     @Override
     public Long getHostelCount() {
         return hostelRepository.count();
+    }
+
+
+    public static String convertPhoneNumberToE164(String ph_no) {
+        PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
+        Phonenumber.PhoneNumber pn = null;
+        String temp_ph_no = null;
+        try {
+            pn = phoneNumberUtil.parse(ph_no, "KE");
+            temp_ph_no = phoneNumberUtil.format(pn, PhoneNumberUtil.PhoneNumberFormat.E164);
+            temp_ph_no = temp_ph_no.replaceAll("\\+","");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return temp_ph_no;
     }
 }

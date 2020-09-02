@@ -34,6 +34,13 @@ public class HostelReservationAPI {
         return new ResponseEntity<>(genericResponse, HttpStatus.OK);
     }
 
+
+    @GetMapping(value = "/download")
+    public ResponseEntity download(){
+        GenericResponse genericResponse=hostelReservation.downloadData();
+        return new ResponseEntity<>(genericResponse, HttpStatus.OK);
+    }
+
     @GetMapping(value = "/rooms")
     public ResponseEntity getRooms(){
         GenericResponse genericResponse=hostelReservation.getAllRooms();

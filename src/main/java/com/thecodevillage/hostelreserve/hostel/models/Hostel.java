@@ -8,9 +8,6 @@ import java.util.Date;
 
 @Entity
 @Table(name = "hostel")
-//@NamedQueries({
-//        @NamedQuery(name = "Account.findByCustomerId",query = "select a from Account a where a.customer_id= :customerId and a.id= :accountId")
-//})
 @Getter
 @Setter
 @EqualsAndHashCode

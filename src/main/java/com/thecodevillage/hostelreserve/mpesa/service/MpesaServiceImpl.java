@@ -1,5 +1,7 @@
 package com.thecodevillage.hostelreserve.mpesa.service;
 
+import com.google.i18n.phonenumbers.PhoneNumberUtil;
+import com.google.i18n.phonenumbers.Phonenumber;
 import com.thecodevillage.hostelreserve.mpesa.models.MpesaSTKPushReq;
 import com.thecodevillage.hostelreserve.mpesa.repository.MpesaSTKPushReqRepository;
 import okhttp3.*;
@@ -16,8 +18,8 @@ import java.util.Base64;
 @Service
 public class MpesaServiceImpl implements MpesaService {
     private static final Logger log = LoggerFactory.getLogger(MpesaServiceImpl.class);
-    String stk_app_key = "you app key";
-    String stk_app_secret = "your app secret";
+    String stk_app_key = "zTePCSpuMvOTd2UQAOQlTFF42o2xh3v2";
+    String stk_app_secret = "y9NwD1y9pftuqx8q";
     private MpesaSTKPushReqRepository mpesaSTKPushReqRepository;
 
 
@@ -179,4 +181,6 @@ public class MpesaServiceImpl implements MpesaService {
     public void logStkPushOutboundRequest(MpesaSTKPushReq mpesaOutboundRequest) {
         mpesaSTKPushReqRepository.save(mpesaOutboundRequest);
     }
+
+
 }

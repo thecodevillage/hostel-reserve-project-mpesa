@@ -1,0 +1,9 @@
+28-08-2020 19:31:39.291 [35m[main][0;39m [34mINFO [0;39m c.t.h.HostelreserveApplicationTests.logStarting - Starting HostelreserveApplicationTests on Administrators-MacBook-Pro-3.local with PID 31020 (started by li in /Users/li/Documents/codev-github/hostelreserve)
+28-08-2020 19:31:39.296 [35m[main][0;39m [34mINFO [0;39m c.t.h.HostelreserveApplicationTests.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+28-08-2020 19:31:44.671 [35m[main][0;39m [34mINFO [0;39m c.t.h.HostelreserveApplicationTests.logStarted - Started HostelreserveApplicationTests in 5.648 seconds (JVM running for 6.913)
+28-08-2020 19:34:21.732 [35m[main][0;39m [34mINFO [0;39m c.t.h.HostelreserveApplicationTests.logStarting - Starting HostelreserveApplicationTests on Administrators-MacBook-Pro-3.local with PID 33503 (started by li in /Users/li/Documents/codev-github/hostelreserve)
+28-08-2020 19:34:21.738 [35m[main][0;39m [34mINFO [0;39m c.t.h.HostelreserveApplicationTests.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+28-08-2020 19:34:38.151 [35m[main][0;39m [34mINFO [0;39m c.t.h.HostelreserveApplicationTests.logStarted - Started HostelreserveApplicationTests in 17.046 seconds (JVM running for 20.757)
+28-08-2020 19:34:50.765 [35m[main][0;39m [34mINFO [0;39m c.t.h.HostelreserveApplicationTests.logStarting - Starting HostelreserveApplicationTests on Administrators-MacBook-Pro-3.local with PID 34043 (started by li in /Users/li/Documents/codev-github/hostelreserve)
+28-08-2020 19:34:50.768 [35m[main][0;39m [34mINFO [0;39m c.t.h.HostelreserveApplicationTests.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+28-08-2020 19:34:55.575 [35m[main][0;39m [34mINFO [0;39m c.t.h.HostelreserveApplicationTests.logStarted - Started HostelreserveApplicationTests in 5.029 seconds (JVM running for 6.111)

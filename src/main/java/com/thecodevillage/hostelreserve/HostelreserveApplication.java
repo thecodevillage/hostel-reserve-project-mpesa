@@ -29,7 +29,7 @@ public class HostelreserveApplication {
 				Hostel hostel=new Hostel();
 				hostel.setCode("1001");
 				hostel.setName("Lion");
-				hostel.setLocation("Kiambu Road");
+				hostel.setLocation("NY Road");
 
 				hostelRepository.save(hostel);
 
@@ -45,11 +45,11 @@ public class HostelreserveApplication {
 
 				Student student=new Student();
 				student.setRoom(room);
-				student.setAdmissionNumber("5456");
+				student.setAdmissionNumber("24242");
 				student.setEmail("stude@gmail.com");
 				student.setFullName("Student");
 				student.setIdNumber("4535345");
-				student.setMobileNumber("254722520441");
+				student.setMobileNumber("42423423");
 				studentRepository.save(student);
 			}
 

@@ -19,6 +19,9 @@ public interface HostelReservation {
     GenericResponse createBooking(BookingRequest bookingRequest);
 
 
+    GenericResponse downloadData();
+
+
     Long getHostelCount();
 
 
